@@ -25,11 +25,6 @@ namespace PokemonWeb.Controllers
             return View(pokemonList);
         }
 
-        public ActionResult PokemonDetails(tblPokemon pokemon)
-        {
-            return View(pokemon);
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
