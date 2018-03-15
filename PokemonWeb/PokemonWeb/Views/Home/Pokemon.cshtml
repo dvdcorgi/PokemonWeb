@@ -1,0 +1,15 @@
+﻿@model List<tblPokemon>
+
+@{
+    ViewBag.Title = "Pokemon";
+}
+
+<h2>Pokemon</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Pokemon</li>
+        <li>@item.Type</li>
+        <li>@item.HP</li>
+    }
+</ul>

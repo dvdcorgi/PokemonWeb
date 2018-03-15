@@ -8,9 +8,18 @@ namespace PokemonWeb.Controllers
 {
     public class HomeController : Controller
     {
+        DBPokemonEntities db = new DBPokemonEntities();
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Pokemon()
+        {
+            List<tblPokemon> pokemonList = (from a in db.tblPokemons
+                                            select a).ToList();
+            return View(pokemonList);
         }
 
         public ActionResult About()
