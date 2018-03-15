@@ -27,6 +27,7 @@ namespace PokemonWeb.Controllers
 
         public ActionResult PokemonDetails(tblPokemon pokemon)
         {
+            //Testing
             return View(pokemon);
         }
 
