@@ -19,6 +19,9 @@ namespace PokemonWeb.Controllers
         {
             List<tblPokemon> pokemonList = (from a in db.tblPokemons
                                             select a).ToList();
+
+            //Swiggity swoot
+
             return View(pokemonList);
         }
 
