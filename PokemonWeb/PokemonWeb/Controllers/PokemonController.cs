@@ -46,10 +46,11 @@ namespace PokemonWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
+        public ActionResult Create(tblPokemon tblPokemon)
         {
             if (ModelState.IsValid)
             {
+                tblPokemon.UploadDate = DateTime.Now;
                 db.tblPokemons.Add(tblPokemon);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -57,6 +58,18 @@ namespace PokemonWeb.Controllers
 
             return View(tblPokemon);
         }
+
+        //public ActionResult Create([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.tblPokemons.Add(tblPokemon);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(tblPokemon);
+        //}
 
         // GET: Pokemon/Edit/5
         public ActionResult Edit(long? id)
@@ -78,16 +91,29 @@ namespace PokemonWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
+        public ActionResult Edit(tblPokemon tblPokemon)
         {
             if (ModelState.IsValid)
             {
+                tblPokemon.UploadDate = DateTime.Now;
                 db.Entry(tblPokemon).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(tblPokemon);
         }
+
+        //public ActionResult Edit([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        tblPokemon.UploadDate = DateTime.Now;
+        //        db.Entry(tblPokemon).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(tblPokemon);
+        //}
 
         // GET: Pokemon/Delete/5
         public ActionResult Delete(long? id)
