@@ -152,6 +152,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PokemonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Pokemon.cshtml" />
     <Content Include="Views\Home\PokemonDetails.cshtml" />
+    <Content Include="Views\Pokemon\Create.cshtml" />
+    <Content Include="Views\Pokemon\Delete.cshtml" />
+    <Content Include="Views\Pokemon\Details.cshtml" />
+    <Content Include="Views\Pokemon\Edit.cshtml" />
+    <Content Include="Views\Pokemon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
