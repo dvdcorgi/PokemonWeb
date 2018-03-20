@@ -11,11 +11,16 @@ namespace PokemonWeb
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblPokemon
     {
         public long id { get; set; }
+
+        [Required(ErrorMessage = "First name is required")]
+        [StringLength(15, ErrorMessage = "Name can be no larger than 30 characters")]
         public string Pokemon { get; set; }
+
         public string Type { get; set; }
         public Nullable<int> HP { get; set; }
         public string Description { get; set; }
