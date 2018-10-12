@@ -42,8 +42,6 @@ namespace PokemonWeb.Controllers
         }
 
         // POST: Pokemon/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(tblPokemon tblPokemon)
@@ -58,18 +56,6 @@ namespace PokemonWeb.Controllers
 
             return View(tblPokemon);
         }
-
-        //public ActionResult Create([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.tblPokemons.Add(tblPokemon);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(tblPokemon);
-        //}
 
         // GET: Pokemon/Edit/5
         public ActionResult Edit(long? id)
@@ -87,8 +73,6 @@ namespace PokemonWeb.Controllers
         }
 
         // POST: Pokemon/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(tblPokemon tblPokemon)
@@ -102,18 +86,6 @@ namespace PokemonWeb.Controllers
             }
             return View(tblPokemon);
         }
-
-        //public ActionResult Edit([Bind(Include = "id,Pokemon,Type,HP,Description,UploadDate")] tblPokemon tblPokemon)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        tblPokemon.UploadDate = DateTime.Now;
-        //        db.Entry(tblPokemon).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(tblPokemon);
-        //}
 
         // GET: Pokemon/Delete/5
         public ActionResult Delete(long? id)
